@@ -1,6 +1,4 @@
-/* =======================
-   HERO SLIDER
-======================= */
+/* HERO SLIDER */
 const slides = document.querySelectorAll('.slides img');
 let current = 0;
 
@@ -19,38 +17,17 @@ function nextSlide() {
 showSlide(current);
 setInterval(nextSlide, 4000);
 
-
-/* =======================
-   EMAILJS CONTACT FORM
-======================= */
-(function () {
-  emailjs.init("7t3SmVwZrfxAZCFfx"); // Public Key
-})();
+/* EMAILJS CONTACT FORM */
+(function () { emailjs.init("7t3SmVwZrfxAZCFfx"); })();
 
 const form = document.getElementById("contact-form");
 const status = document.getElementById("form-status");
 
 form.addEventListener("submit", function (e) {
   e.preventDefault();
-
   status.textContent = "Sending message...";
-
-  // 1️⃣ Send message to YOU
-  emailjs.sendForm(
-    "service_5x43lc8",
-    "template_0a4qp68",
-    this
-  )
-  .then(() => {
-
-    // 2️⃣ Send auto-reply to USER
-    return emailjs.sendForm(
-      "service_5x43lc8",
-      "template_vqrfvoo",
-      this
-    );
-
-  })
+  emailjs.sendForm("service_5x43lc8","template_0a4qp68", this)
+  .then(() => emailjs.sendForm("service_5x43lc8","template_vqrfvoo", this))
   .then(() => {
     status.textContent = "✅ Message sent successfully!";
     form.reset();
@@ -60,9 +37,10 @@ form.addEventListener("submit", function (e) {
     console.error("EmailJS Error:", error);
   });
 });
-// Hamburger menu toggle
-const hamburger = document.getElementById("hamburger");
-const navMenu = document.getElementById("nav-menu");
+
+/* HAMBURGER MENU TOGGLE */
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector("header nav");
 
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("show");
