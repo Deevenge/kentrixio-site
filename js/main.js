@@ -45,3 +45,10 @@ const navMenu = document.querySelector("header nav");
 hamburger.addEventListener("click", () => {
   navMenu.classList.toggle("show");
 });
+// Close mobile menu when a nav link is clicked
+document.querySelectorAll('#nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('show');
+  });
+});
+
