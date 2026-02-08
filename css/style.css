@@ -22,8 +22,9 @@ body {
 /* Header */
 header {
   background-color: #020617;
-  padding: 18px 0;
+  padding: 10px 0;   /* was 18 */
 }
+
 
 .header-inner {
   display: flex;
@@ -34,12 +35,12 @@ header {
 .logo-wrapper {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;   /* was 5 — 8 looks more natural */
 }
 
 .logo-img {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
