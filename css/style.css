@@ -44,14 +44,24 @@ header {
 }
 
 .logo {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: #38bdf8;
-  text-shadow:
-    0 0 6px rgba(56, 189, 248, 0.6),
-    0 0 12px rgba(56, 189, 248, 0.4);
+  animation: logoGlow 4s ease-in-out infinite;
   transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
+
+@keyframes logoGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 6px rgba(56, 189, 248, 0.3),
+      0 0 12px rgba(56, 189, 248, 0.2);
+  }
+  50% {
+    text-shadow:
+      0 0 14px rgba(56, 189, 248, 0.9),
+      0 0 30px rgba(56, 189, 248, 0.6),
+      0 0 50px rgba(56, 189, 248, 0.4);
+  }
+}
+
 .logo-wrapper:hover .logo {
   text-shadow:
     0 0 10px rgba(56, 189, 248, 0.9),
@@ -59,6 +69,7 @@ header {
     0 0 40px rgba(56, 189, 248, 0.5);
   transform: translateY(-1px);
 }
+
 
 nav a {
   color: #e5e7eb;
